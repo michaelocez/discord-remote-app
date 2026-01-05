@@ -1,5 +1,6 @@
 import discord, os, io, asyncio
 from PIL import ImageGrab
+from datetime import datetime
 
 # Set up environment variables in powershell, see README for more details
 TOKEN = os.getenv("DISCORD_TOKEN")
@@ -20,7 +21,8 @@ async def screenshot_once(channel):
     buffer = io.BytesIO()
     screenshot.save(buffer, format="PNG")
     buffer.seek(0)
-    await channel.send(file=discord.File(buffer, "screenshot.png"))
+    timestamp = datetime.now().strftime("%I:%M %p").lstrip("0")
+    await channel.send(f"Screenshot taken at {timestamp}", file=discord.File(buffer, "screenshot.png"))
 
 # Loop screenshots
 async def screenshot_loop(channel, interval):
