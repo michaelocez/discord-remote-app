@@ -49,13 +49,15 @@ pip install discord.py pillow
     ```python bot.py```
 
 ### Optional: Run on Windows startup
-You can add a shortcut in your Shell:Startup folder to start the bot automatically when your PC boots.
 
-For example: 
+To automatically start the bot when Windows starts:
 
-``` "C:\Program Files\Python313\pythonw.exe" "C:\Users\YourUsername\Path\To\DiscordApp.py" ```
+1. Press `Win + R`
+2. Enter:
+   `shell:startup`
+3. Copy `DiscordApp.pyw` into the Startup folder.
 
-Replace the path with the location of your bot on your PC.
+The bot will now start automatically when you log into Windows without opening a command prompt window.
 
 ## Notes
 - Screenshot loop interval is limited to 1–60 minutes.
